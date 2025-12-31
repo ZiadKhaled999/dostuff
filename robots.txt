@@ -1,35 +1,27 @@
-# Robots.txt for Do Stuff Landing Page
-# Generated for optimal SEO performance
+# https://dostuff.pages.dev/robots.txt
 
+# Disallow all crawlers from accessing sensitive directories
 User-agent: *
-Allow: /
-
-# Allow all search engines to crawl the main site
-Sitemap: https://dostuff.com/sitemap.xml
-
-# Block admin and development paths
 Disallow: /admin/
 Disallow: /api/
-Disallow: /node_modules/
-Disallow: /dist/
-Disallow: /build/
-Disallow: /test/
-Disallow: /coverage/
+Disallow: /private/
+Disallow: /*.json$
 
-# Block common tracking parameters
-Disallow: /*?utm_
-Disallow: /*?ref=
-Disallow: /*?fbclid=
-Disallow: /*?gclid=
+# Allow all search engines to crawl the main site
+Sitemap: https://dostuff.pages.dev/sitemap.xml
 
-# Allow important files
-Allow: /sitemap.xml
-Allow: /robots.txt
-Allow: /favicon.ico
-Allow: /manifest.json
+# Crawl-delay to be respectful to servers
+Crawl-delay: 1
 
-# Crawl delay for slower servers (optional)
-# Crawl-delay: 1
+# Specific rules for major search engines
+User-agent: Googlebot
+Crawl-delay: 1
+
+User-agent: Bingbot
+Crawl-delay: 1
+
+User-agent: Slurp
+Crawl-delay: 2
 
 # Host declaration (for sites with multiple domains)
-# Host: https://dostuff.com
+# Host: https://dostuff.pages.dev
