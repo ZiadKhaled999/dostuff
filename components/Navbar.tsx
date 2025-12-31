@@ -64,16 +64,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onGetStarted, onNavClick }) => {
 
   return (
     <>
-      <nav className="fixed top-4 md:top-6 left-0 right-0 z-50 flex justify-center px-4 w-full pointer-events-none">
-        <div className="pointer-events-auto flex items-center justify-between gap-2 md:gap-4 lg:gap-8 bg-black/20 backdrop-blur-xl border border-white/5 rounded-full py-2 md:py-2.5 px-3 md:px-4 shadow-[0_4px_30px_rgba(0,0,0,0.1)] w-full max-w-5xl transition-all duration-700 hover:bg-black/30 hover:border-white/10 hover:shadow-[0_10px_40px_rgba(139,92,246,0.1)]">
+      <nav className="fixed top-4 md:top-6 left-0 right-0 z-50 flex justify-center px-4 w-full pointer-events-none" role="navigation" aria-label="Main navigation">
+        <div className="pointer-events-auto flex items-center justify-between gap-2 md:gap-4 lg:gap-8 bg-black/20 backdrop-blur-xl border border-white/5 rounded-full py-2 md:py-2.5 px-3 md:px-4 shadow-[0_4px_30px_rgba(0,0,0,0.1)] w-full max-w-5xl transition-all duration-700 hover:bg-black/30 hover:border-white/10 hover:shadow-[0_10px_40px_rgba(139,92,246,0.1)]" itemscope itemtype="https://schema.org/SiteNavigationElement">
           
           {/* Brand Logo */}
-          <button onClick={() => handleNavClick('home')} className="group px-1 md:px-2 transition-opacity hover:opacity-80">
+          <a href="/" onClick={(e) => { e.preventDefault(); handleNavClick('home'); }} className="group px-1 md:px-2 transition-opacity hover:opacity-80" aria-label="Do Stuff - Home" itemprop="url">
              <Logo />
-          </button>
+          </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-0 lg:gap-1">
+          <div className="hidden md:flex items-center gap-0 lg:gap-1" role="menubar">
             {links.map((link) => (
               <PremiumNavLink key={link.label} item={link} onClick={handleNavClick} />
             ))}
@@ -84,21 +84,24 @@ export const Navbar: React.FC<NavbarProps> = ({ onGetStarted, onNavClick }) => {
             <button
                 onClick={onGetStarted}
                 className="relative group overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-brand-purple/50"
+                aria-label="Get Started - Create your first exam"
             >
                 <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
                 <span className="relative flex items-center gap-2 h-full w-full cursor-pointer rounded-full bg-black px-5 py-2 text-sm font-medium text-white backdrop-blur-3xl transition-colors group-hover:bg-gray-900">
                     Get Started
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </span>
             </button>
           </div>
 
           {/* Mobile Menu Toggle */}
-          <button 
+          <button
             className="md:hidden text-gray-300 hover:text-white p-2"
             onClick={() => setIsMobileMenuOpen(true)}
+            aria-label="Open mobile menu"
+            aria-expanded={isMobileMenuOpen}
           >
-            <Menu className="w-6 h-6" />
+            <Menu className="w-6 h-6" aria-hidden="true" />
           </button>
         </div>
       </nav>

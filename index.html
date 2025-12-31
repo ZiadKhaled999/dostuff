@@ -94,6 +94,13 @@
   }
 }
 </script>
+<!-- Amplitude Analytics Tracking -->
+<script src="https://cdn.amplitude.com/libs/analytics-browser-2.11.1-min.js.gz"></script>
+<script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.25.0-min.js.gz"></script>
+<script>
+  window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));
+  window.amplitude.init('b76b53341222e9b75049c58b78eb700d', {"autocapture":{"elementInteractions":true}});
+</script>
 <link rel="stylesheet" href="/index.css">
 </head>
   <body>

@@ -3,6 +3,7 @@ import { Button } from './ui/Button';
 import { OrbitalVisual } from './OrbitalVisual';
 import { ArrowRight, Layout, Share2, Activity } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import { ContentOptimization } from './ContentOptimization';
 
 // Hook for detecting when element is in viewport
 function useOnScreen(options: IntersectionObserverInit) {
@@ -71,10 +72,27 @@ export const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
   return (
     <section id="home" ref={heroRef} className="relative min-h-[90vh] w-full flex flex-col justify-center px-6 pt-32 pb-10 overflow-hidden">
       <Helmet>
-        <title>Online Exam Platform & Quiz Builder | Do Stuff</title>
-        <meta name="description" content="The #1 Online Exam Platform. Create engaging assessments with our Quiz Builder Online. Perfect for teachers to make a test or online assessment easily." />
-        <meta name="keywords" content="online exam platform, quiz builder online, make a test, online assessment platform, online test, exams, make an online quiz" />
+        <title>Do Stuff - The Ultimate Online Exam Platform & Quiz Builder</title>
+        <meta name="description" content="Professional online exam platform for teachers and students. Create engaging assessments with multiple question types, timer control, custom styling, and analytics. Make a test in minutes!" />
+        <meta name="keywords" content="online exam platform, quiz builder online, make a test, test maker, online assessment platform, exam software, educational technology, teacher tools, student assessments" />
+        <meta name="author" content="Do Stuff Team" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="canonical" href="https://dostuff.com/" />
+        <meta name="theme-color" content="#0B0B15" />
+        
+        {/* Enhanced Meta Tags */}
+        <meta property="og:title" content="Do Stuff - The Ultimate Online Exam Platform" />
+        <meta property="og:description" content="Professional online exam platform for teachers and students. Create engaging assessments with multiple question types." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://dostuff.com/" />
+        <meta property="og:image" content="https://dostuff.com/logo.png" />
+        <meta property="og:site_name" content="Do Stuff" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Do Stuff - The Ultimate Online Exam Platform" />
+        <meta name="twitter:description" content="Professional online exam platform for teachers and students." />
+        <meta name="twitter:image" content="https://dostuff.com/logo.png" />
       </Helmet>
 
       {/* Background Mesh Gradients */}
@@ -82,10 +100,11 @@ export const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
       <div className="absolute bottom-[-10%] right-[-10%] w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-brand-blue/20 rounded-full blur-[90px] md:blur-[130px] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto w-full relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-0 relative items-center">
-          
-          {/* Left Column: Text Content */}
-          <div className="flex flex-col justify-center gap-6 relative z-20 text-center lg:text-left items-center lg:items-start">
+        <ContentOptimization contentType="hero" keywords={['online exam platform', 'quiz builder', 'make a test', 'test maker', 'online assessment']}>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-0 relative items-center">
+            
+            {/* Left Column: Text Content */}
+            <div className="flex flex-col justify-center gap-6 relative z-20 text-center lg:text-left items-center lg:items-start">
             
             {/* Title - SEO Optimized H1 */}
             <div className={getAnimClass(0)} style={{ transitionDelay: shouldShow ? '100ms' : '0ms' }}>
@@ -133,13 +152,13 @@ export const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
               <FeaturePill icon={Share2} text="Easy Sharing" />
               <FeaturePill icon={Activity} text="Real-time Results" />
             </div>
-            
+
           </div>
 
           {/* Right Column: Visual - Hidden on mobile, visible on tablet (md) and up */}
           <div className="hidden md:flex relative items-center justify-center lg:justify-end min-h-[500px]">
-             <div 
-               className={`origin-center lg:origin-right w-full h-full flex items-center justify-center ${getOrbitalAnimClass()}`} 
+             <div
+               className={`origin-center lg:origin-right w-full h-full flex items-center justify-center ${getOrbitalAnimClass()}`}
                style={{ transitionDelay: shouldShow ? '200ms' : '0ms' }}
              >
                <div className="scale-[0.8] lg:scale-100">
@@ -148,6 +167,7 @@ export const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
              </div>
           </div>
         </div>
+        </ContentOptimization>
       </div>
     </section>
   );

@@ -108,70 +108,70 @@ export const Features: React.FC = () => {
     }`;
 
   return (
-    <section className="py-24 px-6 relative" id="features" ref={ref}>
+    <section className="py-24 px-6 relative" id="features" ref={ref} aria-labelledby="features-heading">
         {/* Scroll Anchor offset */}
         <div id="how-it-works" className="absolute top-0 left-0 w-full h-24 -mt-24 pointer-events-none opacity-0" />
         
         <div className="max-w-7xl mx-auto space-y-32">
             
             {/* Section 1: Question Types */}
-            <div className="grid lg:grid-cols-5 gap-12 items-center">
+            <article className="grid lg:grid-cols-5 gap-12 items-center" aria-labelledby="question-types-heading">
                 <div className={`lg:col-span-2 space-y-6 text-center lg:text-left ${getAnimClass()}`}>
-                    <h2 className="text-3xl lg:text-4xl font-bold">
+                    <h2 id="question-types-heading" className="text-3xl lg:text-4xl font-bold">
                         Premium-Style <br />
                         <span className="text-brand-glow">Question Types</span>
                     </h2>
                     <p className="text-gray-400 text-lg leading-relaxed">
-                        Create engaging assessments with diverse question formats that keep students motivated and challenged. 
-                        No more boring exams.
+                        Create engaging assessments with diverse question formats that keep students motivated and challenged.
+                        No more boring exams. Our platform supports the most comprehensive range of question types in the industry.
                     </p>
                 </div>
-                <div className="lg:col-span-3 grid sm:grid-cols-2 gap-4">
-                    <QuestionTypeItem index={0} icon={CheckSquare} title="Multiple Choice" desc="Classic choose-the-correct-answer format" />
-                    <QuestionTypeItem index={1} icon={Type} title="Fill in the Blank" desc="Type the missing word or phrase" />
-                    <QuestionTypeItem index={2} icon={Languages} title="Translation" desc="Arabic ↔ English translation exercises" />
-                    <QuestionTypeItem index={3} icon={ToggleRight} title="True or False" desc="Simple right or wrong statements" />
-                    <QuestionTypeItem index={4} icon={GitMerge} title="Matching" desc="Connect items from two tables" />
-                    <QuestionTypeItem index={5} icon={BookOpen} title="Reading Comp" desc="Paragraph-based questions" />
+                <div className="lg:col-span-3 grid sm:grid-cols-2 gap-4" role="list">
+                    <QuestionTypeItem index={0} icon={CheckSquare} title="Multiple Choice" desc="Classic choose-the-correct-answer format with up to 6 options" />
+                    <QuestionTypeItem index={1} icon={Type} title="Fill in the Blank" desc="Type the missing word or phrase with auto-grading support" />
+                    <QuestionTypeItem index={2} icon={Languages} title="Translation" desc="Arabic ↔ English translation exercises with bidirectional support" />
+                    <QuestionTypeItem index={3} icon={ToggleRight} title="True or False" desc="Simple right or wrong statements for quick knowledge checks" />
+                    <QuestionTypeItem index={4} icon={GitMerge} title="Matching" desc="Connect items from two tables to test association skills" />
+                    <QuestionTypeItem index={5} icon={BookOpen} title="Reading Comp" desc="Paragraph-based questions with comprehension analysis" />
                 </div>
-            </div>
+            </article>
 
             {/* Section 2: Teacher Tools */}
-            <div className="relative">
+            <article className="relative" aria-labelledby="teacher-tools-heading">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-brand-purple/10 blur-[80px] md:blur-[100px] rounded-full pointer-events-none" />
                 
                 <div className={`text-center max-w-2xl mx-auto mb-16 relative z-10 ${getAnimClass()}`} style={{ transitionDelay: '200ms' }}>
-                    <h2 className="text-3xl lg:text-4xl font-bold mb-4">Powerful Teacher Tools</h2>
-                    <p className="text-gray-400">Everything you need to create, customize, and track your exams with professional-grade features.</p>
+                    <h2 id="teacher-tools-heading" className="text-3xl lg:text-4xl font-bold mb-4">Powerful Teacher Tools</h2>
+                    <p className="text-gray-400">Everything you need to create, customize, and track your exams with professional-grade features. Designed by educators for educators.</p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
-                    <FeatureCard 
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10" role="list">
+                    <FeatureCard
                         index={0}
-                        icon={Timer} 
-                        title="Timer Control" 
-                        description="Set exam duration and auto-submit to ensure fair testing environments." 
+                        icon={Timer}
+                        title="Timer Control"
+                        description="Set exam duration and auto-submit to ensure fair testing environments. Prevents cheating and maintains exam integrity."
                     />
-                    <FeatureCard 
+                    <FeatureCard
                         index={1}
-                        icon={Palette} 
-                        title="Custom Styling" 
-                        description="Personalize colors and themes to match your school or subject branding." 
+                        icon={Palette}
+                        title="Custom Styling"
+                        description="Personalize colors and themes to match your school or subject branding. Create a professional learning environment."
                     />
-                    <FeatureCard 
+                    <FeatureCard
                         index={2}
-                        icon={Share} 
-                        title="Easy Sharing" 
-                        description="Generate shareable exam links that students can access with one click." 
+                        icon={Share}
+                        title="Easy Sharing"
+                        description="Generate shareable exam links that students can access with one click. No downloads or installations required."
                     />
-                    <FeatureCard 
+                    <FeatureCard
                         index={3}
-                        icon={BarChart3} 
-                        title="Analytics" 
-                        description="Track student performance with detailed dashboards and insights." 
+                        icon={BarChart3}
+                        title="Analytics"
+                        description="Track student performance with detailed dashboards and insights. Identify knowledge gaps and improve teaching strategies."
                     />
                 </div>
-            </div>
+            </article>
 
         </div>
     </section>

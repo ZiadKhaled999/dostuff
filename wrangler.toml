@@ -1,0 +1,10 @@
+name = "do-stuff"
+main = "index.html"
+compatibility_date = "2025-12-31"
+
+[build]
+command = "npm run build"
+publish = "dist"
+
+[build.upload]
+format = "single_page_app"
